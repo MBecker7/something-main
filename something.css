@@ -90,62 +90,36 @@ a:active {
     font-weight: bold;
 }
 
-
-/* Grid */
-
+/* Grundlegende Stile für die Galerie */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
-
-
-/* Picture Frame */
 
 .gallery-frame {
-    padding: .5rem;
-    font-size: 1rem;
-    background-color: #333;
-    color: #d9d9d9;
+    width: 200px;
+    text-align: center;
 }
-
-
-/* Images */
 
 .gallery-img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    opacity: .7;
-    object-fit: cover;
-    transition: opacity 0.5s ease-in-out, transform 1s;
+    transition: transform 1s ease-in-out;
 }
 
+/* Animation für die Rotation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation auf die Bilder anwenden */
 .gallery-img:hover {
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-@media only screen and (max-width: 600px) {
-    body {
-        padding: 0;
-    }
-    header img {
-        width: 15%;
-        height: auto;
-        margin: 0;
-    }
-    h1 {
-        font-size: 1.25rem;
-        width: 60%;
-    }
-    .gallery-frame {
-        padding: 0;
-    }
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, 50%);
-        gap: 0;
-    }
+    animation: rotate 2s linear infinite;
 }
