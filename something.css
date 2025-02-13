@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1em;
+}
+
+body {
+    padding: 1rem 5rem 1rem 5rem;
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+}
+
+header {
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header img {
+    width: 10%;
+    height: auto;
+    margin: 2em;
+}
+
+footer p {
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+}
+
+p {
+    margin: .5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+/* unvisited link */
+
+a:link {
+    color: #d9d9d9;
+    text-decoration: none;
+}
+
+
+/* visited link */
+
+a:visited {
+    color: #d9d9d9;
+    text-decoration: none;
+}
+
+
+/* mouse over link */
+
+a:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* selected link */
+
+a:active {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* Grid */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Picture Frame */
+
+.gallery-frame {
+    padding: .5rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: #d9d9d9;
+}
+
+
+/* Images */
+
+.gallery-img {
+    max-width: 100%;
+    height: auto;
+    opacity: .7;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out, transform 1s;
+}
+
+.gallery-img:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+    header img {
+        width: 15%;
+        height: auto;
+        margin: 0;
+    }
+    h1 {
+        font-size: 1.25rem;
+        width: 60%;
+    }
+    .gallery-frame {
+        padding: 0;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, 50%);
+        gap: 0;
+    }
+}
