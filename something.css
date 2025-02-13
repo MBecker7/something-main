@@ -119,7 +119,18 @@ a:active {
     }
 }
 
+@keyframes rotationx {
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(359deg);
+    }
+}
+
 /* Animation auf die Bilder anwenden */
 .gallery-img:hover {
     animation: rotate 2s linear infinite;
+    transition: transform 5s;
+    animation: rotationx 1s infinite linear
 }
